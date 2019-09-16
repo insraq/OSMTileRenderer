@@ -25,13 +25,13 @@ namespace Renderer
                     {
                         Console.WriteLine($"Drawing Tile {x},{y}");
                         var i = Image.FromStream(await http.GetStreamAsync(
-                            $"http://b.tile.stamen.com/terrain-background/{level}/{x}/{y}.png"));
+                            $"http://b.tile.stamen.com/terrain-background/{level}/{x}/{y}.jpg"));
                         g.DrawImage(i, new Point(x * tileSize, y * tileSize));
                     }
                 }
             }
 
-            output.Save("output.png", ImageFormat.Png);
+            output.Save("output.jpg", ImageFormat.Jpeg);
         }
     }
 }
